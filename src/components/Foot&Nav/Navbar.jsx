@@ -69,7 +69,9 @@ const Navbar = () => {
     <motion.div
       variants={navbarVariants}
       animate={isScrolled ? "scrolled" : "notScrolled"}
-      className="sticky top-0 z-10 text-white"
+      className={` ${
+        isScrolled ? "sticky top-0" : " absolute right-0"
+      }  top-0 z-10 text-white`}
     >
       <div className="flex gap-2 items-center p-5 justify-end">
         {navData.map((el) => {
