@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="w-full h-[80vh] absolute top-0">
       <img
         className="w-full h-full object-cover object-top"
-        src="https://i.pinimg.com/564x/90/ec/2d/90ec2dfde875ef1fbf4d749bce6bb927.jpg"
+        src="https://i.pinimg.com/564x/8a/4e/11/8a4e1194bef802829c5ba80823dca0d0.jpg"
         alt=""
       />
       <Marque />

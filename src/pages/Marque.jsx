@@ -24,7 +24,7 @@ const Marque = () => {
         animate="animate"
         style={{ display: "inline-block" }}
       >
-        LEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEegasgaewrbwawhasrhberaw4vwffffffffffffffffffffffffffffffffffff
+        OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP 
       </motion.div>
     </div>
   );
