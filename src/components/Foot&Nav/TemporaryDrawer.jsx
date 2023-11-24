@@ -1,28 +1,13 @@
-import React, { useState, useEffect } from "react";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Drawer from "@mui/material/Drawer";
+import Button from "@mui/material/Button";
+import List from "@mui/material/List";
 import { motion } from "framer-motion";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Navbar = () => {
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const navbarVariants = {
-    scrolled: { backgroundColor: "white", color: "black" },
-    notScrolled: { backgroundColor: "transparent", color: "white" },
-  };
-
+export default function TemporaryDrawer() {
+  // for inner data
   const navData = [
     {
       id: 1,
@@ -64,23 +49,39 @@ const Navbar = () => {
     { id: 7, title: "Interscope Vinyl Collective" },
     { id: 8, title: "24 GRAMMY® Nominees" },
   ];
+  const [openDropdown, setOpenDropdown] = React.useState(null);
 
-  return (
-    <motion.div
-      variants={navbarVariants}
-      animate={isScrolled ? "scrolled" : "notScrolled"}
-      className={` ${
-        isScrolled ? " fixed top-0" : " absolute top-0"
-      }  top-0 z-10 text-white w-full`}
+  // for drawer
+  const [state, setState] = React.useState({
+    left: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, true)}
+      onKeyDown={toggleDrawer(anchor, false)}
     >
-      <div className="flex gap-2 items-center p-5 justify-end">
+      <List className="flex flex-col gap-3">
         {navData.map((el) => {
           return (
             <motion.div
               key={el.id}
-              className="text-lg relative flex items-center justify-center cursor-pointer"
-              onMouseEnter={() => setOpenDropdown(el.id)}
-              onMouseLeave={() => setOpenDropdown(null)}
+              className="text-lg  flex flex-col items-center justify-center cursor-pointer"
+              onClick={() => setOpenDropdown(el.id)}
+              // onMouseLeave={() => setOpenDropdown(null)}
             >
               {/* parent title */}
               <motion.div className="flex justify-center items-center hover:text-red-500 transition duration-150">
@@ -94,14 +95,7 @@ const Navbar = () => {
               </motion.div>
               {/* child dropdown */}
               {openDropdown === el.id && el?.addition && (
-                <motion.div
-                  className="absolute top-full left-0 px-5 py-2 flex flex-col bg-white shadow-md gap-2"
-                  variants={navbarVariants}
-                  animate={isScrolled ? "scrolled" : "notScrolled"}
-                  // initial={{ opacity: 0, y: -10 }}
-                  // animate={{ opacity: 1, y: 0 }}
-                  // exit={{ opacity: 0, y: -10 }}
-                >
+                <motion.div className="top-full left-0 px-5 py-2 flex flex-col gap-2">
                   {el.addition.map((child) => (
                     <motion.p
                       className="hover:text-red-500 transition duration-150"
@@ -115,9 +109,22 @@ const Navbar = () => {
             </motion.div>
           );
         })}
-      </div>
-    </motion.div>
+      </List>
+    </Box>
   );
-};
 
-export default Navbar;
+  return (
+    <div>
+      <React.Fragment key="left">
+        <div className="bg-white w-12 h-12 text-[15px] rounded-full flex items-center justify-center" onClick={toggleDrawer("left", true)}>Left</div>
+        <Drawer
+          anchor="left"
+          open={state.left}
+          onClose={toggleDrawer("left", false)}
+        >
+          {list("left")}
+        </Drawer>
+      </React.Fragment>
+    </div>
+  );
+}
