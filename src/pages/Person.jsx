@@ -6,6 +6,7 @@ const Person = () => {
     <div className=" bg-black">
       <Marquee
         autoFill={true}
+        direction="right"
       >
         <div className="w-20 h-20 mx-20 bg-red-500"></div>
         <div className="w-20 h-20 mx-20 bg-blue-500"></div>
