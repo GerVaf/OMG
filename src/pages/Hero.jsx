@@ -1,17 +1,32 @@
 import React from "react";
-import Marque from "./Marque";
-import Navbar from "../components/Foot&Nav/Navbar";
-
+import logo from "../assets/whiteLogo.png";
+import sign from "../assets/sign.png";
 const Hero = () => {
   return (
-    <div className="  h-[100vh]">
-      <div className="w-full h-[80vh]  top-0">
-        <img
-          className="w-full h-full object-cover object-top"
-          src="https://i.pinimg.com/564x/8a/4e/11/8a4e1194bef802829c5ba80823dca0d0.jpg"
-          alt=""
-        />
-        <Marque className="" />
+    <div className="flex justify-around">
+      {/* left information  */}
+      <div className="w-3/6 flex flex-col items-center text-white">
+        <h1 className="bla text-[150px]">Welcome</h1>
+        <div className="flex flex-col gap-2">
+          <p className="text-3xl">
+            to <span className="text-6xl text-red-500">OPAQUE MUSIC GROUP</span>{" "}
+            is
+          </p>
+          <p className="text-3xl">where music meets entrepreneurship.</p>
+          <p className="text-lg">
+            Join us on this journey as we revolutionize the creators' economy
+            and
+          </p>
+          <p className="text-lg">
+            help local music businesses reach unprecedented levels of success.
+          </p>
+        </div>
+
+        <img className=" self-end w-96 h-36 object-cover object-center" src={sign} alt="" />
+      </div>
+      {/* right logo  */}
+      <div className=" w-1/6 flex items-center">
+        <img className=" w-full object-cover" src={logo} alt="" />
       </div>
     </div>
   );
