@@ -8,11 +8,11 @@ const Person = () => {
         autoFill={true}
         direction="right"
       >
-        <div className="w-20 h-20 mx-20 bg-red-500"></div>
-        <div className="w-20 h-20 mx-20 bg-blue-500"></div>
-        <div className="w-20 h-20 mx-20 bg-green-500"></div>
-        <div className="w-20 h-20 mx-20 bg-orange-500"></div>
-        <div className="w-20 h-20 mx-20 bg-violet-500"></div>
+        <div className="w-20 h-20 lg:mx-20 mx-5 bg-red-500"></div>
+        <div className="w-20 h-20 lg:mx-20 mx-5 bg-blue-500"></div>
+        <div className="w-20 h-20 lg:mx-20 mx-5 bg-green-500"></div>
+        <div className="w-20 h-20 lg:mx-20 mx-5 bg-orange-500"></div>
+        <div className="w-20 h-20 lg:mx-20 mx-5 bg-violet-500"></div>
       </Marquee>
     </div>
   );
