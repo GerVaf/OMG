@@ -18,7 +18,7 @@ const Marque = () => {
   return (
     <div className="my-5" style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
       <motion.div
-        className=" text-pink-600 bg-zinc-900 text-6xl lg:text-[100px] font-bold"
+        className=" text-black bg-white text-6xl lg:text-[100px] font-bold"
         variants={containerVariants}
         initial="animate"
         animate="animate"
