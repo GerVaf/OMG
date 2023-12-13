@@ -1,5 +1,5 @@
 import React from "react";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 
 const Marque = () => {
   const containerVariants = {
@@ -16,15 +16,17 @@ const Marque = () => {
   };
 
   return (
-    <div className="my-5" style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
+    <div className="mb-5" style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
       <motion.div
-        className=" text-black bg-white text-6xl lg:text-[100px] font-bold"
+        className=" text-black bg-white text-6xl lg:text-[40px] font-bold"
         variants={containerVariants}
         initial="animate"
         animate="animate"
         style={{ display: "inline-block" }}
       >
-        OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP OPAQUE MUSIC GROUP 
+        OPAQUEINDUSTRIES OPAQUEINDUSTRIES OPAQUEINDUSTRIES OPAQUEINDUSTRIES{" "}
+        OPAQUEINDUSTRIES OPAQUEINDUSTRIES OPAQUEINDUSTRIES OPAQUEINDUSTRIES{" "}
+        OPAQUEINDUSTRIES OPAQUEINDUSTRIES OPAQUEINDUSTRIES{" "}
       </motion.div>
     </div>
   );

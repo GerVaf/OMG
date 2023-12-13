@@ -11,7 +11,7 @@ const Hero = () => {
           <p className="text-lg lg:text-3xl">
             to{" "}
             <span className="text-xl lg:text-6xl text-red-500">
-              OPAQUE MUSIC GROUP
+              OPAQUE INDUSTRIES
             </span>{" "}
             is
           </p>

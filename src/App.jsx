@@ -7,9 +7,9 @@ import Person from "./pages/Person";
 const App = () => {
   return (
     <div className=" scrollbar-none overflow-y-scroll h-[100vh] bg-black">
+      <Marque />
       <Hero />
       <Person />
-      <Marque />
       <Footer />
     </div>
   );
