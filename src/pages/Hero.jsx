@@ -1,7 +1,10 @@
 import React from "react";
 import logo from "../assets/whiteLogo.png";
+import logo1 from "../assets/OMG.png";
 import sign from "../assets/sign.png";
+import ImageSlider from "../components/Hero/ImageSlider";
 const Hero = () => {
+  const imgAr = [logo, logo1];
   return (
     <div className="flex lg:flex-row flex-col-reverse justify-around mb-5">
       {/* left information  */}
@@ -34,8 +37,10 @@ const Hero = () => {
         />
       </div>
       {/* right logo  */}
-      <div className=" h-40 w-40 lg:w-1/6 lg:h-full flex items-center m-5 lg:m-0 self-center">
-        <img className=" w-full object-cover" src={logo} alt="" />
+      <div className=" h-40 w-40 relative lg:w-1/6 lg:h-full flex items-center m-5 lg:m-0 self-center">
+        <div className=" absolute w-[300px] h-[300px] ">
+          <ImageSlider images={imgAr} />
+        </div>
       </div>
     </div>
   );
